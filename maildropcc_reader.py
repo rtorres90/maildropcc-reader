@@ -41,7 +41,12 @@ class MailDrop(object):
     def get_email_body(self, email_url):
         """Extracts the email content of the provided email url"""
         soup = BeautifulSoup(self.get_raw_page_content(site=email_url), "html.parser")
-        return soup.find('pre').text
+        if soup.find('pre'):
+        	return soup.find('pre').text
+        elif soup.find('iframe', id='messageframe'):
+        	raw_email_body = self.get_raw_page_content(site=self._maildrop_domain + soup.find('iframe', id='messageframe').get('src'))
+        	soup = BeautifulSoup(raw_email_body, "html.parser")
+        	return soup.find('body').text
 
     def get_emails(self):
         """Gets all the emails of the inbox."""
