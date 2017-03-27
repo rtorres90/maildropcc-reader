@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
   name = 'MaildropccReader',
@@ -8,7 +8,7 @@ setup(
   author = 'Roberto Torres',
   author_email = 'roberto.torres.dev@gmail.com',
   url = 'https://github.com/rtorres90/maildropcc-reader',
-  download_url = 'https://github.com/rtorres90/maildropcc-reader/archive/0.2.tar.gz',
+  download_url = 'https://github.com/rtorres90/maildropcc-reader/archive/0.3.tar.gz',
   keywords = ['api', 'maildropcc', 'testing'],
   install_requires=[
           'BeautifulSoup',
