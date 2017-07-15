@@ -1,7 +1,6 @@
 MaildropccReader
 ================
 [![Build Status](https://travis-ci.org/rtorres90/maildropcc-reader.svg?branch=master)](https://travis-ci.org/rtorres90/maildropcc-reader)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 MaildropccReader is a simple API to extract mail account from www.maildrop.cc
 
