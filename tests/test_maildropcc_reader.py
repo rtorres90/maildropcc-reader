@@ -1,5 +1,3 @@
-from random import randint
-import re
 import unittest
 
 from MaildropccReader import MaildropccReader
