@@ -1,0 +1,8 @@
+language: python
+python:
+  - "2.7"
+cache: pip
+install:
+  - pip install requests
+script:
+  - python -m unittest tests.test_maildropcc_reader

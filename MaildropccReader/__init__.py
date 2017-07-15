@@ -63,7 +63,7 @@ class MaildropccReader(object):
 
         for raw_email in raw_emails:
             raw_email_body = self.get_raw_email_body(raw_email.get('id'))
-            raw_email.update({'body': raw_email})
+            raw_email.update({'body': raw_email_body})
         return raw_emails
 
     def get_emails_by_sender(self, sender):
