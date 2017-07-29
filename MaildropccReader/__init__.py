@@ -2,6 +2,9 @@
 import json
 
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 class MaildropccReader(object):
     """
@@ -38,12 +41,12 @@ class MaildropccReader(object):
 
     def get_raw_emails_from_api(self):
         "gets raw email data from maildrop api."
-        request = requests.get(self._maildrop_domain + self.email_account)
+        request = requests.get(self._maildrop_domain + self.email_account, verify=False)
         return json.loads(request.text)
 
     def get_raw_email_body(self, email_id):
         """Extracts the email content of the provided email url."""
-        request = requests.get(self._maildrop_domain + self.email_account + "/" + email_id)
+        request = requests.get(self._maildrop_domain + self.email_account + "/" + email_id, verify=False)
         return json.loads(request.text)
 
     def get_emails(self):
